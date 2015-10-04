@@ -123,7 +123,7 @@ class SnipitGUI:
 
     def create_vbox(self):
         self.vbox = Gtk.Box()
-        self.vbox.set_spacing(0)
+        self.vbox.set_spacing(10)
         self.vbox.set_orientation(Gtk.Orientation.VERTICAL)
 
         self.hbox = Gtk.ButtonBox()
@@ -223,8 +223,9 @@ class SnipitGUI:
         else:
             self.remove_tranparency_setup()
             self.screenShotMode = False
+            self.window.resize(400,200)
             self.vbox.add(self.image)
-            self.vbox.set_center_widget(self.image)
+            #self.vbox.set_center_widget(self.image)
             self.window.unfullscreen()
             self.window.show_all()
             self.area.hide()
@@ -270,15 +271,31 @@ class SnipitGUI:
 
     def capture_area(self):
         screen_area = Gdk.get_default_root_window()
-        pb = 0
 
-        if self.ending_x_cood > self.start_x_cood:
-            pb = Gdk.pixbuf_get_from_window(screen_area, self.start_x_cood, self.start_y_cood, self.ending_x_cood-self.start_x_cood, self.ending_y_cood-self.start_y_cood)
-        else:
-            pb = Gdk.pixbuf_get_from_window(screen_area, self.ending_x_cood, self.ending_y_cood, self.start_x_cood-self.ending_x_cood, self.start_y_cood-self.ending_y_cood)
+        x , y, w, h = self.normalize_area()
+        pb = Gdk.pixbuf_get_from_window(screen_area, x , y , w, h)
 
         self.image = Gtk.Image.new_from_pixbuf(pb)
         self.exit_screenshot_mode()
+        
+    def normalize_area (self):
+        
+        x = self.start_x_cood
+        y = self.start_y_cood
+        w = self.ending_x_cood-self.start_x_cood
+        h = self.ending_y_cood-self.start_y_cood
+        
+        if w < 0:
+            w *= -1
+            x = self.ending_x_cood
+            
+        if h <0:
+            h *= -1
+            y = self.ending_y_cood
+            
+        
+        return x , y, w, h
+        
 
 def main():
     win = SnipitGUI()

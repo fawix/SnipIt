@@ -8,7 +8,7 @@ ATTENTION: This program is not meant for Windows only Linux.
 
 How to use:
 
-1. run setup.py
+
 2. launch the application
 3. click and drag the mouse around the area you want to take a screenshot from
 4. paste somewhere ...

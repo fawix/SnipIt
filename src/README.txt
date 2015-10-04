@@ -18,8 +18,6 @@ Ways to Launch:
 2. GNOME quick command line shortcut (my favorite)
 	a. ALT+F2
 	b. type snipit
-	
-3. Click on Application launcher at the Apps space
 	  
 
 How to use:
@@ -46,4 +44,6 @@ Example:
 |                                                      |
 +------------------------------------------------------+
 
+
 Feel free to contribute!
+

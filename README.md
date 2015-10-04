@@ -9,7 +9,7 @@ How to use:
 2. launch the application through snipit.py
 3. click and drag the mouse around the area you want to take a screenshot from
 4. paste somewhere ...
-5  ...or/and save to file
+5.  ...or/and save to file
 
 Feel free to contribute!
 

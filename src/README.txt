@@ -6,9 +6,24 @@ Use at your own risk.
 
 ATTENTION: This program is not meant for Windows only Linux.
 
-How to use:
+Ways to Setup:
+1. cd to the directory
+2. run sudo python steup.py install
 
-1. run setup.py
+Ways to Launch:
+1. Command-line:
+	a. open terminal
+	b type snipit
+	
+2. GNOME quick command line shortcut (my favorite)
+	a. ALT+F2
+	b. type snipit
+	
+3. Click on Application launcher at the Apps space
+	  
+
+How to use:
+1. run "python setup.py install" (first time only) 
 2. launch the application
 3. click and drag the mouse around the area you want to take a screenshot from
 4. paste somewhere ...
@@ -31,4 +46,4 @@ Example:
 |                                                      |
 +------------------------------------------------------+
 
-Feel free to contribute on GitHub!
+Feel free to contribute!

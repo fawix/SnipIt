@@ -1,10 +1,12 @@
+#!/usr/bin/python
+
 '''
 Created on Sep 26, 2015
 
 This is my attempt of creating a simple and sleek ScreenShot application.
   Inspired by MS Snipping Tool.
 
-Disclaimer: it's meant to work on GNOME3 evironment and it "tries" to use PyGObject 
+Disclaimer: it's meant to work on GNOME3 environment and it "tries" to use PyGObject 
 
 
 I am not liable for any loss or damage that might be caused by the use of the software.
@@ -40,6 +42,7 @@ from os import path
 import sys, cairo, re
 
 class SnipitGUI:
+    """Main screen for SnipIt"""
 
     start_x_cood  = 0 #starting X
     start_y_cood  = 0 #starting Y
@@ -54,7 +57,13 @@ class SnipitGUI:
 
         self.window = Gtk.Window()
         self.window.set_title("Snip-It")
-        self.window.set_icon_from_file('snipit.ico')
+        
+        try:
+            self.window.set_icon_from_file('/usr/icon/snipit.ico')
+        except:
+            print ("error: could not load icon")
+            
+        #self.window.set_icon_from_file('/usr/icon/snipit.ico')
         self.window.set_border_width(0)
         self.window.set_default_size(400, 200)
 

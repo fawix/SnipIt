@@ -14,7 +14,7 @@ requirements = [
 
 setup(
     name='SniptIt',
-    version='0.6dev',
+    version='0.7dev',
     packages=['snipit',],
     author='Fawix',
     description="Simple Screenshot Application for GNOME3",

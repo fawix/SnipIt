@@ -224,11 +224,13 @@ class SnipitGUI:
             self.remove_tranparency_setup()
             self.screenShotMode = False
             self.vbox.add(self.image)
+            self.vbox.set_center_widget(self.image)
             self.window.unfullscreen()
             self.window.show_all()
             self.area.hide()
 
             if self.image.get_storage_type() == Gtk.ImageType.PIXBUF:
+                self.clipboard.clear()
                 self.clipboard.set_image(self.image.get_pixbuf())
             else:
                 print("error: could not put image on clipboard.")
@@ -256,12 +258,14 @@ class SnipitGUI:
         self.firstClickDone = False
 
         if self.image is not None:
+            self.image.clear()
             self.vbox.remove(self.image)
+            
 
-        self.image = None
+        
 
     def destroy(self, window):
-        #self.clipboard.clear() # avoid memory leak ?
+        self.clipboard.clear() # avoid memory leak ?
         Gtk.main_quit()
 
     def capture_area(self):

@@ -15,15 +15,13 @@ How to use:
 
 Possible ways to launch the app on GNOME3:
 
-Ways to Launch:
-
 1. Command-line:
     - open terminal 	
     - type snipit
 2. GNOME quick command line shortcut (my favorite):
     - ALT+F2	
     - type snipit
-	
+3. If you have a dock application you can add the shortcut to the dock by typing in the command **snipit** 
 
 
 Feel free to contribute!

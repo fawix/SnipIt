@@ -26,4 +26,4 @@ Possible ways to launch the app on GNOME3:
 
 Feel free to contribute!
 
-**NOTE:** Still trying to figure out how to add GUI shortcut via setup.py
+TODO: add GUI shortcut
